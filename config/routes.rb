@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
+  get 'dashboards/index'
+
+  devise_for :users
   get 'pages/index'
-
   get 'pages/pricing'
-
   get 'pages/testimonials'
-
   get 'pages/careers'
-
   get 'pages/faq'
-
   get 'pages/security'
-
   get 'pages/contact'
+  
+  scope :users do
+    root :to => 'dashboards#index', :as => :user_root
+  end
   
   root 'pages#index'
 
