@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  resources :accounts
   get 'dashboard_bookkeepers/index'
 
   devise_for :bookkeepers
   get 'dashboards/index'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   get 'pages/index'
   get 'pages/pricing'
   get 'pages/testimonials'

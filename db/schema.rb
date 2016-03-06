@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305235453) do
+ActiveRecord::Schema.define(version: 20160306005420) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "company_name"
+    t.string   "phone_number"
+    t.string   "address"
+    t.string   "card_number"
+    t.string   "name_on_card"
+    t.string   "expiry"
+    t.string   "cvc"
+    t.string   "billing_posta_code"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "bookkeepers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
