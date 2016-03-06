@@ -1,2 +1,14 @@
-<h1>This is your dashboard</h1>
-<p>Here you can communicate with your bookkeeper, team lead, administative staff etc.</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <% @accounts.each do |f| %>
+                <h1>Welcome <%= f.first_name %>!</h1>
+            <% end %>
+            <br>
+            <p>
+                Here you can communicate with your bookkeeper, team lead, administative staff etc.
+            </p>            
+        </div>
+    </div>
+</div>
+
