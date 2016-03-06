@@ -30,7 +30,7 @@ class AccountsController < ApplicationController
 
     respond_to do |format|
       if @account.save
-        format.html { redirect_to dashboards_index_path, notice: 'Account was successfully created.' }
+        format.html { redirect_to new_question_path, notice: 'Account was successfully created.' }
         format.json { render :show, status: :created, location: @account }
       else
         format.html { render :new }
