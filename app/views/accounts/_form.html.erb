@@ -11,47 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :company_name %><br>
-    <%= f.text_field :company_name %>
+    <%= f.text_field :company_name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_number %>
+    <%= f.text_field :phone_number, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :card_number %><br>
-    <%= f.text_field :card_number %>
+    <%= f.text_field :card_number, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name_on_card %><br>
-    <%= f.text_field :name_on_card %>
+    <%= f.text_field :name_on_card, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :expiry %><br>
-    <%= f.text_field :expiry %>
+    <%= f.text_field :expiry, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :cvc %><br>
-    <%= f.text_field :cvc %>
+    <%= f.text_field :cvc, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :billing_posta_code %><br>
-    <%= f.text_field :billing_posta_code %>
+    <%= f.text_field :billing_posta_code, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary btn-lg btn-block" %>
   </div>
 <% end %>
