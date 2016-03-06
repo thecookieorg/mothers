@@ -1,41 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Accounts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Company name</th>
-      <th>Phone number</th>
-      <th>Address</th>
-      <th>Card number</th>
-      <th>Name on card</th>
-      <th>Expiry</th>
-      <th>Cvc</th>
-      <th>Billing posta code</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @accounts.each do |account| %>
-      <tr>
-        <td><%= account.first_name %></td>
-        <td><%= account.last_name %></td>
-        <td><%= account.company_name %></td>
-        <td><%= account.phone_number %></td>
-        <td><%= account.address %></td>
-        <td><%= account.card_number %></td>
-        <td><%= account.name_on_card %></td>
-        <td><%= account.expiry %></td>
-        <td><%= account.cvc %></td>
-        <td><%= account.billing_posta_code %></td>
-        <td><%= link_to 'Edit', edit_account_path(account) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <% @accounts.each do |account| %>
+          <div class="panel-heading"><strong style="font-size: 17px;">My Account</strong> <em><small><%= link_to '[Modify]', edit_account_path(account) %></small></em></div>
+      
+          <!-- Table -->
+          <table class="table">
+          <thead>
+            <tr>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Company name</th>
+              <th>Phone number</th>
+              <th>Address</th>
+              <th>Card number</th>
+              <th>Name on card</th>
+              <th>Expiry</th>
+              <th>Cvc</th>
+              <th>Billing posta code</th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            
+              <tr>
+                <td><%= account.first_name %></td>
+                <td><%= account.last_name %></td>
+                <td><%= account.company_name %></td>
+                <td><%= account.phone_number %></td>
+                <td><%= account.address %></td>
+                <td><%= account.card_number %></td>
+                <td><%= account.name_on_card %></td>
+                <td><%= account.expiry %></td>
+                <td><%= account.cvc %></td>
+                <td><%= account.billing_posta_code %></td>
+              </tr>
+            <% end %>
+          </tbody>
+          </table>
+        </div>      
+    </div>
+  </div>
+</div>
