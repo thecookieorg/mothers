@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'dashboard_bookkeepers/index'
+
+  devise_for :bookkeepers
   get 'dashboards/index'
 
   devise_for :users
@@ -10,8 +13,13 @@ Rails.application.routes.draw do
   get 'pages/security'
   get 'pages/contact'
   
+  
   scope :users do
     root :to => 'dashboards#index', :as => :user_root
+  end
+  
+  scope :bookkeepers do
+    root :to => 'dashboard_bookkeepers#index', :as => :bookkeeper_root
   end
   
   root 'pages#index'

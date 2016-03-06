@@ -8,7 +8,13 @@
 </head>
 <body>
 
-<%= render 'layouts/nav' %>
+<% if user_signed_in? %>
+  <%= render 'layouts/user_nav' %>
+<% elsif bookkeeper_signed_in? %>
+  <%= render 'layouts/bookkeeper_nav' %>
+<% else %>
+  <%= render 'layouts/general_nav' %>
+<% end %>
 
 <%= yield %>
 
