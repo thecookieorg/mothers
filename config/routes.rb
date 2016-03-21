@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'pages/faq'
   get 'pages/security'
   get 'pages/contact'
+  resources :after_register
   
   
   scope :users do

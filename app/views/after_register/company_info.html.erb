@@ -1,0 +1,8 @@
+<h2>Thanks for signing up with mothers</h2>
+<%= simple_form_for @user, url: wizard_path, method: :put do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :company %>
+    <%= f.input :phone %>
+    <%= f.submit "Next" %>
+<% end %>

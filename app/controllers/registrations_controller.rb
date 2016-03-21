@@ -1,7 +1,25 @@
 class RegistrationsController < Devise::RegistrationsController
-  protected
 
-  def after_sign_up_path_for(resource)
-    new_account_path # Or :prefix_to_your_route
+  def create
+    super
   end
+
+  protected
+  
+  def after_sign_up_path_for(resource)
+    after_register_path(:company_info)
+  end
+  
+  
+  private
+
+  def sign_up_params
+    params.require(:user).permit(:name, :address, :company, :phone, :email, :password, :password_confirmation, :current_password)
+  end
+
+  def account_update_params
+    params.require(:user).permit(:name, :address, :company, :phone, :email, :password, :password_confirmation, :current_password)
+  end
+  
+  
 end
