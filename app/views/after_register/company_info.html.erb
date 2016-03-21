@@ -1,8 +1,61 @@
-<h2>Thanks for signing up with mothers</h2>
-<%= simple_form_for @user, url: wizard_path, method: :put do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :company %>
-    <%= f.input :phone %>
-    <%= f.submit "Next" %>
-<% end %>
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Meet your all-star bookeeping team!</h3>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                      <%= image_tag 'bookkeeper4.jpg', class: "img-responsive img-rounded" %>
+                      <p><em>Dayna, a bookkeeper</em></p>
+                      <p>Fun facts about Dayna:<br>
+                          <ul>
+                              <li>She LOVES Starbucks</li>
+                              <li>She is smart and gentle person</li>
+                              <li>Your books are in great hands!</li>
+                          </ul>
+                      </p>
+                    </div>
+                    <div class="col-md-6">
+                      <%= image_tag 'bookkeeper3.jpg', class: "img-responsive img-rounded" %>
+                      <p><em>Marko, executive</em></p>
+                      <p>Fun facts about Marko:<br>
+                          <ul>
+                              <li>Ex-soccer player</li>
+                              <li>Family first, business second</li>
+                              <li>Badass (survived 2 wars)</li>
+                          </ul>
+                      </p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  
+    
+    <br>
+    
+    
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Lets create your account!</h3>
+              </div>
+              <div class="panel-body">
+                <%= simple_form_for @user, url: wizard_path, method: :put do |f| %>
+                    <%= f.input :name %>
+                    <%= f.input :address %>
+                    <%= f.input :company %>
+                    <%= f.input :phone %>
+                    <%= f.submit "Next", class: "btn btn-primary" %>
+                <% end %>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

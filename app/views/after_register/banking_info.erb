@@ -1,0 +1,21 @@
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Banking Info!</h3>
+              </div>
+              <div class="panel-body">
+                <%= simple_form_for @user, url: wizard_path, method: :put do |f| %>
+                    <%= f.input :bank_accounts_info, :collection => 1..10, :include_blank => false, :label => 'How many bank accounts do you use?' %>
+                    <%= f.input :credit_cards_info, :collection => 0..10, :include_blank => false, :label => 'How many credit cards do you use?' %>
+                    <%= f.input :loans_info, :collection => 0..10, :include_blank => false, :label => 'Does you company have loans?' %>
+                    <%= f.input :leases_info, :collection => 0..10, :include_blank => false, :label => 'Does your company have any leases?' %>
+                    <%= f.submit "Finish", class: "btn btn-primary" %>
+                <% end %>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
