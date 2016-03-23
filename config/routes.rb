@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :questions
-  resources :accounts
+
+  resources :messages do  
+    resources :comments
+  end
+  
   get 'dashboard_bookkeepers/index'
 
   devise_for :bookkeepers

@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>My Messages</h2>
+    </div><!-- end col-md-12 -->
+  </div><!-- end row -->
+  
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+       <table class="table">
+         <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @messages.each do |message| %>
+          <tr>
+            <td><%= message.title %></td>
+            <td><%= message.description %></td>
+            <td><%= link_to 'Show', message %></td>
+            <td><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure you want to delete this conversation?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+      </table>
+      <%= link_to 'New Message', new_message_path, class: "btn btn-success" %>
+    </div>
+  </div>
+ 
+  
+</div><!-- end container -->

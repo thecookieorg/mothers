@@ -76,4 +76,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  #Configuration for Devise -> Change this to the production URL when the domain name is attached
+  config.action_mailer.default_url_options = { host: 'whispering-chamber-82307.herokuapp.com' }
 end
