@@ -1,8 +1,41 @@
 <div class="container">
     <div class="row">
+        
         <div class="col-md-12">
             <h2>Welcome, <%= current_user.name %></h2>
             <br>
+            <p>Two buttons will be here on the home page: <br>
+                <ul>
+                    <li>Upload Document</li>
+                    <li>Book Apointment</li>
+                </ul>
+            </p>
+            <p>
+        ADD -> user roles:<br>
+        <ul>
+            <li>Add user roles: client_admin & client</li>
+            <li>Client_admin: full access</li>
+            <li>client: limited access</li>
+            <li>Add Private/Public message (availalbe only for client_admin to choose)</li>
+        </ul>
+    </p>
+    <p>
+        ADD -> upload documents:<br>
+        <ul>
+        <li>Customer can't upload documents on their own, the request has to come from Bookkeeper</li>
+        <li>Customer authorization: customer CAN see the requests for documents; CAN update existing request with the file that has been requested</li>
+        <li>Customer CAN'T: create new upload document form; delete any requests;</li>
+        <li>Bookkeeper authorization: CAN create new document request; CAN delete requests, CAN update requests;</li>
+        </ul>
+    </p>
+    
+    <p>
+        ADD onboarding process extra fields:<br>
+        <ul>
+            <li>Add "For-Profit | Non-Profit"</li>
+            <li>Add "What industry are you in?" dropdown menu on the first onboarding </li>
+        </ul>
+    </p>
             <p>
                 Here you can communicate with your bookkeeper, team lead, administative staff etc.
             </p>            
