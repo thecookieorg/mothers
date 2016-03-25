@@ -13,6 +13,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
+gem 'cancancan'
+# gem 'rolify'
 gem 'zopim_rails'
 gem 'wicked'
 gem 'simple_form'
