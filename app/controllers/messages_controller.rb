@@ -1,11 +1,12 @@
 class MessagesController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+      @messages = Message.all
   end
 
   # GET /messages/1
@@ -71,6 +72,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:title, :description)
+      params.require(:message).permit(:title, :description, :public)
     end
 end

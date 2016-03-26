@@ -7,6 +7,14 @@
       <div class="form-inputs">
         <%= f.input :title, autofocus: true, class: "form-control" %>
         <%= f.input :description, class: "form-control" %>
+        <% if current_user.client_admin? %>
+          <%= f.input :public, :collection => [[true, 'Public'], [false, 'Private']], 
+          :label => 'Make this message public?',
+          :value_method => :first,
+          :as => :radio_buttons, 
+          :item_wrapper_class => 'inline',
+          :checked => true %>
+        <% end %>
       </div>
     
       <div class="form-actions">

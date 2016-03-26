@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   resources :messages do  
     resources :comments
   end
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   get 'pages/faq'
   get 'pages/security'
   get 'pages/contact'
+  
   resources :after_register
   
   

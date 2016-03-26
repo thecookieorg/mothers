@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
   #  redirect_to root_url, :alert => exception.message
   #end
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:alert] = "Access denied. You are not authorized to access the requested page."
-    redirect_to root_path and return
+    flash[:alert] = "Access denied. You are not authorized to access the requested section."
+    redirect_to '/dashboards/index'
   end
   
   

@@ -1,19 +1,36 @@
 <div class="container">
     <div class="row">
-        
         <div class="col-md-12">
             <h2>Welcome, <%= current_user.name %></h2>
             <br>
+            <p>Lets get started!</p>
+        </div><!-- end col-md-12 -->
+    </div><!-- end row -->
+    
+    <div class="row">
+        <div class="col-md-6">
+            <p><%= link_to 'Upload Document', '#', class: "btn btn-primary btn-lg btn-block" %></p>    
+        </div><!-- end col-md-6 -->
+        
+        <div class="col-md-6">
+            <p><%= link_to 'Book Appointment', '#', class: "btn btn-success btn-lg btn-block" %></p>    
+        </div><!-- end col-md-6 -->
+    </div><!-- end row -->
+    
+    <div class="row">
+        <div class="col-md-12">
+            
+            <br>
             <p>Two buttons will be here on the home page: <br>
                 <ul>
-                    <li>Upload Document</li>
-                    <li>Book Apointment</li>
+                    <li>Upload Document - DONE</li>
+                    <li>Book Apointment - DONE</li>
                 </ul>
             </p>
             <p>
         ADD -> user roles:<br>
         <ul>
-            <li>Add user roles: client_admin & client</li>
+            <li>Add user roles: client_admin & client - DONE</li>
             <li>Client_admin: full access</li>
             <li>client: limited access</li>
             <li>Add Private/Public message (availalbe only for client_admin to choose)</li>
