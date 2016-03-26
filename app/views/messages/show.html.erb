@@ -4,6 +4,7 @@
       <%= link_to 'Back', messages_path %>
       <h2><%= @message.title %></h2>
       <p><%= @message.description %></p>
+      <small>Asked by <%= @message.user.name %>, <%= time_ago_in_words(@message.created_at) %> ago.</small>
       <hr>
     </div><!-- end col-md-12 -->
   </div><!-- end row -->
