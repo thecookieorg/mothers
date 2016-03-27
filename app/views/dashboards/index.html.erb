@@ -1,4 +1,15 @@
 <div class="container">
+    <% @documents.each do |document| %>
+        <% if document.present? %>
+            <% if document.attachment.blank? %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>We have requested some documents from you. Please go <%= link_to 'here', documents_path %> and upload them!</h3>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    <% end %>
     <div class="row">
         <div class="col-md-12">
             <h2>Welcome, <%= current_user.name %></h2>

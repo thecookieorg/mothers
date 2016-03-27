@@ -3,4 +3,14 @@ add API keys to config/initializers/zopim.rb
 
 ----------------------------------------------
 
+Dropbox API:
+rake dropbox:authorize APP_KEY=2womm9uss4iufo1 APP_SECRET=99cz1tf7dskkuuj ACCESS_TYPE=dropbox|app_folder
+App key: 2womm9uss4iufo1
+App Secret: 99cz1tf7dskkuuj
+App folder: mothersbookkeeping
 
+Authorization was successful. Here you go:
+
+access_token: wrqvw5ejehc612a2
+access_token_secret: ehhkv1ivbdr6mk6
+user_id: 431688949

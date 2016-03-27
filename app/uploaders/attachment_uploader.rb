@@ -7,6 +7,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
+  #storage :dropbox
   storage :file
   # storage :fog
 
@@ -17,7 +18,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   end
 
   def extension_white_list
-    %w(pdf doc docx xls)
+    %w(pdf doc docx xls xlsx)
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

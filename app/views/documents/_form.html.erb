@@ -1,0 +1,12 @@
+<%= simple_form_for(@document) do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :attachment, input_html: { hidden: true }, label: 'Upload Attachment' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

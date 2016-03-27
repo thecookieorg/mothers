@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   
   has_many :messages
   has_many :comments, dependent: :destroy
+  has_many :documents
   
   #after_create :send_notification
   

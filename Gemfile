@@ -19,8 +19,10 @@ gem 'zopim_rails'
 gem 'wicked'
 gem 'simple_form'
 gem 'carrierwave'
+gem 'carrierwave-dropbox'
 gem "figaro"
 gem 'rails_admin'
+gem "font-awesome-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
