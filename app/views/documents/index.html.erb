@@ -10,7 +10,11 @@
       <th>Title</th>
       <th>Description</th>
       <th>Download File</th>
-      <th colspan="3"></th>
+      <% if current_user.admin? %>
+        <th colspan="3"></th>
+      <% else %>
+        <th colspan="2"></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -18,7 +22,11 @@
     <% @documents.each do |document| %>
       <tr>
         <td><%= document.title %></td>
-        <td><%= document.description %></td>
+        <% if document.attachment.blank? %>
+          <td><%= document.description %></td>
+        <% else %>
+          <td>Document uploaded.</td>
+        <% end %>
         <% if document.attachment.present? %>
           <td>
             <%= link_to document.attachment.url, class: "btn btn-primary btn-xs" do %>
@@ -26,21 +34,34 @@
             <% end %>
           </td>
         <% else %>
-          <td>No file</td>
+          <td><p class="btn btn-danger btn-xs"><i class="fa fa-ban"></i> File Not Uploaded</p></td>
         <% end %>
-        <td><%= link_to 'Show', document %></td>
-        <td><%= link_to 'Edit', edit_document_path(document) %></td>
-        <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%# link_to 'Show', document %></td>
+        <td>
+          <% if document.attachment.blank? %>
+            <%= link_to edit_document_path(document), class: "btn btn-success btn-xs" do %>
+              <i class="fa fa-cloud-upload"></i> Upload Document
+            <% end %>
+          <% else %>
+            <%= link_to edit_document_path(document), class: "btn btn-warning btn-xs" do %>
+              <i class="fa fa-pencil-square-o"></i> Modify Document
+            <% end %>
+          <% end %>
+        </td>
+        <% if current_user.admin? %>
+          <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+    <% if current_user.admin? %>
+      <%= link_to 'New Document Request', new_document_path, class: "btn btn-success" %>
+    <% end %>
+
     </div><!-- end col-md-12 -->
   </div><!-- end row -->
 </div><!-- end container -->
 
 
-
-<br>
-
-<%= link_to 'New Document', new_document_path %>

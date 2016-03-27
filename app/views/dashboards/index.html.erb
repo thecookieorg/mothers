@@ -4,7 +4,10 @@
             <% if document.attachment.blank? %>
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>We have requested some documents from you. Please go <%= link_to 'here', documents_path %> and upload them!</h3>
+                        <div class="document-alert document-alert-warning text-center">
+                            <h4>We have requested some documents from you. Please go <%= link_to 'here', documents_path %> and upload them!</h4>    
+                        </div>
+                        
                     </div>
                 </div>
             <% end %>
