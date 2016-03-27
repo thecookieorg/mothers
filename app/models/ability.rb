@@ -11,16 +11,19 @@ class Ability
       can :dashboard              # grant access to the dashboard
       can :manage, :all
       can :manage, Document
+      can :manage, Meeting
     elsif user.client_admin?
       can :read, :all
       can :manage, Message
       can :read, Document
       can :update, Document
+      can :read, Meeting
     else 
       can :read, :all
       can :manage, Message
       can :read, Document
       can :update, Document
+      can :read, Meeting
     end
     #if user.has_role? :admin
     #  can :access, :rails_admin   # grant access to rails_admin

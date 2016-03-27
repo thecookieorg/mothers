@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Book a Meeting</h2>
+    </div><!-- end col-md-12 -->
+  </div><!-- end row -->
+  <div class="row">
+    <div class="col-md-12">
+      <% @meetings.each do |meeting| %>
+      <h4>Book a meeting with <%= meeting.bookkeeper_name %></h4>
+        <p><%= link_to "Show #{meeting.bookkeeper_name}'s Calendar", meeting %></p>
+        
+        <% if current_user.admin? %>
+          <p><%= link_to 'Edit', edit_meeting_path(meeting) %></p>
+          <p><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <% end %>
+    <% end %>
+    </div><!-- end col-md-12 -->
+  </div><!-- end row -->
+  <%= link_to 'New Meeting', new_meeting_path if current_user.admin? %>
+</div><!-- end container -->
+
+
