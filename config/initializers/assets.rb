@@ -6,6 +6,8 @@ Rails.application.config.assets.precompile += %w( bookkeeper.jpg )
 Rails.application.config.assets.precompile += %w( bookkeeper2.jpg )
 Rails.application.config.assets.precompile += %w( bookkeeper3.jpg )
 Rails.application.config.assets.precompile += %w( bookkeeper4.jpg )
+Rails.application.config.assets.precompile += %w( muna.jpg )
+Rails.application.config.assets.precompile += %w( jay.jpg )
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path

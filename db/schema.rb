@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160327050400) do
+ActiveRecord::Schema.define(version: 20160327064357) do
 
   create_table "bookkeepers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20160327050400) do
     t.boolean  "admin",                  default: false
     t.boolean  "client_admin",           default: true
     t.boolean  "client",                 default: false
+    t.boolean  "for_profit",             default: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
