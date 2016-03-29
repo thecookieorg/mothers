@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   #rolify
-  ROLES = %i[admin client_admin client]
+  #ROLES = %i[admin client_admin client]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

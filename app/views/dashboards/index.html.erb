@@ -16,12 +16,41 @@
     <div class="row">
         <div class="col-md-12">
             <h2>Welcome, <%= current_user.name %></h2>
-            <br>
-            <p>Lets get started!</p>
         </div><!-- end col-md-12 -->
     </div><!-- end row -->
     
-    <div class="row">
+    
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12">
+            <p>Revenue (per year)</p>
+            <div id="myfirstchart" style="height: 250px;"></div>
+            <script>
+                new Morris.Line({
+                      // ID of the element in which to draw the chart.
+                      element: 'myfirstchart',
+                      // Chart data records -- each entry in this array corresponds to a point on
+                      // the chart.
+                      data: [
+                        { year: '2008', revenue: 20000 },
+                        { year: '2009', revenue: 10000 },
+                        { year: '2010', revenue: 5000 },
+                        { year: '2011', revenue: 5000 },
+                        { year: '2012', revenue: 20000 }
+                      ],
+                      // The name of the data record attribute that contains x-values.
+                      xkey: 'year',
+                      // A list of names of data record attributes that contain y-values.
+                      ykeys: ['revenue'],
+                      // Labels for the ykeys -- will be displayed when you hover over the
+                      // chart.
+                      labels: ['Revenue']
+                    });
+            </script>
+        </div>
+    </div>
+    
+    
+     <div class="row" style="margin-top: 50px;">
         <div class="col-md-6">
             <p>
                 <%= link_to documents_path, class: "btn btn-primary btn-lg btn-block" do %>
@@ -39,6 +68,7 @@
             </p>    
         </div><!-- end col-md-6 -->
     </div><!-- end row -->
+    
     
     <div class="row">
         <div class="col-md-12">

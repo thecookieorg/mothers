@@ -23,6 +23,9 @@ gem 'carrierwave-dropbox'
 gem "figaro"
 gem 'rails_admin'
 gem "font-awesome-rails"
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+gem 'momentjs-rails', '>= 2.8.1',  github: 'derekprior/momentjs-rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160327214307) do
+ActiveRecord::Schema.define(version: 20160329171431) do
 
   create_table "bookkeepers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -45,10 +45,15 @@ ActiveRecord::Schema.define(version: 20160327214307) do
   create_table "documents", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.integer  "user_id"
     t.string   "attachment"
+    t.string   "requested_by"
+    t.string   "due_date"
+    t.boolean  "verified_by_bookkeeper", default: false
+    t.boolean  "mail_instead",           default: false
+    t.date     "due_date_by"
   end
 
   add_index "documents", ["user_id"], name: "index_documents_on_user_id"

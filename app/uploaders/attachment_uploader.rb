@@ -7,7 +7,7 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  #storage :dropbox
+  # storage :dropbox
   storage :file
   # storage :fog
 

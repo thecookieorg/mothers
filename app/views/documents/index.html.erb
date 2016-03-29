@@ -7,6 +7,8 @@
       <table class="table table-striped">
   <thead>
     <tr>
+      <th>Requested By</th>
+      <th>Requeste Date</th>
       <th>Title</th>
       <th>Description</th>
       <th>Download File</th>
@@ -15,14 +17,18 @@
       <% else %>
         <th colspan="2"></th>
       <% end %>
+      <th>Due Date</th>
+      <th>Verified</th>
     </tr>
   </thead>
 
   <tbody>
     <% @documents.each do |document| %>
       <tr>
+        <td><%= document.requested_by %></td>
+        <td><%= document.created_at %></td>
         <td><%= document.title %></td>
-        <% if document.attachment.blank? %>
+        <% if document.attachment.url.blank? %>
           <td><%= document.description %></td>
         <% else %>
           <td>Document uploaded.</td>
@@ -48,6 +54,13 @@
             <% end %>
           <% end %>
         </td>
+        <td><%= document.due_date_by %></td>
+        <% if document.verified_by_bookkeeper == true %>
+          <td class="text-center"><i class="fa fa-check" style="color: green;"></i></td>
+        <% elsif document.verified_by_bookkeeper == false %>
+          <td class="text-center"><i class="fa fa-times" style="color: red;"></i></td>
+        <% end %>
+        
         <% if current_user.admin? %>
           <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
