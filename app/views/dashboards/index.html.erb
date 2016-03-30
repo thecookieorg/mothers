@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="document-alert document-alert-warning text-center">
-                            <h4>We have requested some documents from you. Please go <%= link_to 'here', documents_path %> and upload them!</h4>    
+                            <h5><%= document.requested_by %> have requested <em><%= document.title %></em> document from you. Please go <%= link_to 'here', documents_path %> and upload it!</h5>    
                         </div>
                         
                     </div>

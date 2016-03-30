@@ -16,6 +16,7 @@
       <th colspan="2"></th>
       <th>Due Date</th>
       <th>Verified</th>
+      <th>Messages</th>
     </tr>
   </thead>
 
@@ -64,6 +65,11 @@
         <% elsif document.verified_by_bookkeeper == false %>
           <td class="text-center"><i class="fa fa-times" style="color: red;"></i></td>
         <% end %>
+        <td>
+          <%= link_to document_path(document) do %>
+            <i class="fa fa-comments-o"></i> Show
+          <% end %>
+        </td>
         
         <% if current_user.admin? %>
           <td><%= link_to 'Delete', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
