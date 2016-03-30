@@ -4,12 +4,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
-      <%= link_to 'Back', messages_path %>
+      <%= link_to 'Back', documents_path %>
       <h2><%= @document.title %></h2>
       <p><%= @document.description %></p>
       <hr>
-      <%= link_to 'Edit', edit_document_path(@document) %> |
-      <%= link_to 'Back', documents_path %>
+      
+      <%= link_to 'Edit', edit_document_path(@document) if current_user.admin? %>
+      
 
     </div><!-- end col-md-12 -->
   </div><!-- end row -->

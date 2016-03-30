@@ -17,3 +17,7 @@
 //= require pickers
 //= require jquery_ujs
 //= require_tree .
+
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
